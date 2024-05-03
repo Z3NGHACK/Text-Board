@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-80">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Project Text Board
+        </title>
+        <!--Icon-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <section class="editor">
+            <div class="header">
+                <div id="navbar">
+                    
+                    <a><i class="ri-arrow-left-s-line" id="back_icon"  onclick="window.location.href='index.html';"></i></a>
+                    <div class="inp">
+                        <input placeholder="Enter your text"  id="text_inp">
+                        <div id="done_head">Done</div>
+                    </div>
+                    <a id="font_icon"><i class="ri-font-size"></i></a>
+                    <a id="ani_icon"><i class="ri-star-smile-line"></i></a>
+                    <a id="bord_icon"><i class="ri-shape-2-line"></i></a>
+                </div>
+
+                <div id="font_style">
+                    <div id="color" class="font">Font Color</div>
+                    <div id="bg_font" class="font">Back ground Color</div>
+                    <div id="style" class="font">Font Style</div>
+                    <div id="done_font" class="done_btn">Done</div>
+                </div>
+
+                <div id="font_color" class="color_fab">
+                    <h3>Color</h3>
+                    <div class="inp_font_color">
+                        <span>Enter color code: </span>
+                        <input placeholder="Input" id="font_color_code">
+                    </div>
+                    <div id="done_btn_color" class="done_btn">Done</div>
+                </div>
+
+                <div id="font_bg" class="color_fab">
+                    <h3>Background Color</h3>
+                    <div class="inp_bg_color">
+                        <span>Enter color code: </span>
+                        <input placeholder="Input" id="bg_color_code">
+                    </div>
+                    <div id="done_btn_bg" class="done_btn">Done</div>
+                </div>
+
+                <div id="style_group">
+                    <h3>Font Style</h3>
+                    <div class="style" style="font-family: serif;">Serif</div>
+                    <div class="style" style="font-family: sans-serif;">Sans-Serif</div>
+                    <div class="style" style="font-family: monospace;">Monospace</div>
+                    <div class="style" style="font-family: cursive;">Cursive</div>
+                    <div class="style" style="font-family: fantasy;">Fantasy</div>
+                    <div id="done_btn_style" class="done_btn">Done</div>
+                </div>
+
+                    <!-- <div id="sticker">
+                        <div class="stick">1</div>
+                        <div class="stick">2</div>
+                        <div class="stick">3</div>
+                        <div class="stick">4</div>
+                        <div class="stick">5</div>
+                        <div class="stick">6</div>
+                    </div> -->
+
+                <div id="animation">
+                    <div id="ani1" class="ani">animtion1</div>
+                    <div id="ani2" class="ani">animtion2</div>
+                    <div id="ani3" class="ani">animtion3</div>
+                    <div id="ani4" class="ani">animtion4</div>
+                    <div id="ani5" class="ani">animtion5</div>
+                    <div id="done_ani" class="done_btn">Done</div>
+                </div>
+
+                <div id="border_style">
+                    <div><a id="border1" class="border" style="border-style: solid; border-color: #fff">solid</a></div>
+                    <div><a id="border1" class="border" style="border-style: dashed; border-color: #fff">dashed</a></div>
+                    <div><a id="border1" class="border" style="border-style: dotted; border-color: #fff">dotted</a></div>
+                    <div><a id="border1" class="border" style="border-style: double; border-color: #fff">double</a></div>
+                    <div><a id="border1" class="border" style="border-style: inset; border-color: #fff">inset</a></div>
+                    <div><a id="border1" class="border" style="border-style: outset; border-color: #fff">outset</a></div>
+                    <div><a id="border1" class="border" style="border-style: groove; border-color: #fff">groove</a></div>
+                    <div><a id="border1" class="border" style="border-style: ridge;border-color: #fff">ridge</a></div>
+                    <a id="done_border" class="done_btn">Done</a>
+                </div>
+            </div>
+            <div id="text">
+                
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
