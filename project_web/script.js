@@ -1,3 +1,8 @@
+window.onload = function() {
+    document.body.classList.add('fade-in');
+}
+
+
 const font = document.getElementById("font_icon");
 const ani = document.getElementById("ani_icon");
 const bord = document.getElementById("bord_icon");
@@ -20,6 +25,8 @@ const fcDone = document.getElementById("done_btn_color");
 const bgDone = document.getElementById("done_btn_bg");
 const fsDone = document.getElementById("done_btn_style");
 
+let text = document.getElementById("text_control");
+
 if(font){
     font.addEventListener('click', ()=>{
         font_bg.classList.remove('open');
@@ -28,6 +35,7 @@ if(font){
         gFont.classList.add('open');
         gAni.classList.remove('open');
         gBord.classList.remove('open');
+        text.classList.add('open');
     })
 }
 if(ani){
@@ -38,6 +46,7 @@ if(ani){
         gAni.classList.add('open');
         gFont.classList.remove('open');
         gBord.classList.remove('open');
+        text.classList.add('open');
     })
 }
 if(bord){
@@ -48,21 +57,25 @@ if(bord){
         gBord.classList.add('open');
         gFont.classList.remove('open');
         gAni.classList.remove('open');
+        text.classList.add('open');
     })
 }
 if(fDone){
     fDone.addEventListener('click', ()=>{
         gFont.classList.remove('open');
+        text.classList.remove('open');
     })
 }
 if(aDone){
     aDone.addEventListener('click', ()=>{
         gAni.classList.remove('open');
+        text.classList.remove('open');
     })
 }
 if(bDone){
     bDone.addEventListener('click', ()=>{
         gBord.classList.remove('open');
+        text.classList.remove('open');
     })
 }
 if(color){
@@ -71,6 +84,7 @@ if(color){
         font_bg.classList.remove('open');
         style_group.classList.remove('open');
         gFont.classList.remove('open');
+        text.classList.add('open');
     })
 }
 if(bg_font){
@@ -79,6 +93,7 @@ if(bg_font){
         font_bg.classList.add('open');
         style_group.classList.remove('open');
         gFont.classList.remove('open');
+        text.classList.add('open');
     })
 }
 if(style){
@@ -87,23 +102,24 @@ if(style){
         font_bg.classList.remove('open');
         style_group.classList.add('open');
         gFont.classList.remove('open');
+        text.classList.add('open');
     })
 }
 if(fcDone){
     fcDone.addEventListener('click', ()=>{
         font_color.classList.remove('open');
-        gFont.classList.add('open')
+        gFont.classList.add('open');
     })
 }
 if(bgDone){
     bgDone.addEventListener('click', ()=>{
         font_bg.classList.remove('open');
-        gFont.classList.add('open')
+        gFont.classList.add('open');
     })
 }
 if(fsDone){
     fsDone.addEventListener('click', ()=>{
         style_group.classList.remove('open');
-        gFont.classList.add('open')
+        gFont.classList.add('open');
     })
 }
