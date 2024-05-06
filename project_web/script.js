@@ -1,6 +1,6 @@
-window.onload = function() {
-    document.body.classList.add('fade-in');
-}
+// window.onload = function() {
+//     document.body.classList.add('fade-in');
+// }
 
 
 const font = document.getElementById("font_icon");
@@ -9,6 +9,7 @@ const bord = document.getElementById("bord_icon");
 const gFont = document.getElementById("font_style");
 const gAni = document.getElementById("animation");
 const gBord = document.getElementById("border_style");
+
 const fDone = document.getElementById("done_font");
 const aDone = document.getElementById("done_ani");
 const bDone = document.getElementById("done_border");
@@ -27,6 +28,35 @@ const fsDone = document.getElementById("done_btn_style");
 
 let text = document.getElementById("text_control");
 
+const sNav = document.getElementById("semi_navbar");
+const ham = document.getElementById("hamburger");
+const sDone = document.getElementById("semi_done");
+
+const font_icon = document.getElementsByClassName("font-icon");
+
+const sFont = document.getElementById("font_icons");
+const sAni = document.getElementById("ani_icons");
+const sBord = document.getElementById("bord_icons");
+
+let t = document.getElementById("text");
+
+let ani1 = document.getElementById("ani1");
+let ani2 = document.getElementById("ani2");
+let ani3 = document.getElementById("ani3");
+let ani4 = document.getElementById("ani4");
+let ani5 = document.getElementById("ani5");
+let ani6 = document.getElementById("ani6");
+let ani7 = document.getElementById("ani7");
+
+let border1 = document.getElementById("border1");
+let border2 = document.getElementById("border2");
+let border3 = document.getElementById("border3");
+let border4 = document.getElementById("border4");
+let border5 = document.getElementById("border5");
+let border6 = document.getElementById("border6");
+let border7 = document.getElementById("border7");
+let border8 = document.getElementById("border8");
+
 if(font){
     font.addEventListener('click', ()=>{
         font_bg.classList.remove('open');
@@ -36,6 +66,7 @@ if(font){
         gAni.classList.remove('open');
         gBord.classList.remove('open');
         text.classList.add('open');
+        sNav.classList.remove('open');
     })
 }
 if(ani){
@@ -47,6 +78,7 @@ if(ani){
         gFont.classList.remove('open');
         gBord.classList.remove('open');
         text.classList.add('open');
+        sNav.classList.remove('open');
     })
 }
 if(bord){
@@ -58,22 +90,26 @@ if(bord){
         gFont.classList.remove('open');
         gAni.classList.remove('open');
         text.classList.add('open');
+        sNav.classList.remove('open');
     })
 }
 if(fDone){
     fDone.addEventListener('click', ()=>{
+        sNav.classList.add('open');
         gFont.classList.remove('open');
         text.classList.remove('open');
     })
 }
 if(aDone){
     aDone.addEventListener('click', ()=>{
+        sNav.classList.add('open');
         gAni.classList.remove('open');
         text.classList.remove('open');
     })
 }
 if(bDone){
     bDone.addEventListener('click', ()=>{
+        sNav.classList.add('open');
         gBord.classList.remove('open');
         text.classList.remove('open');
     })
@@ -121,5 +157,126 @@ if(fsDone){
     fsDone.addEventListener('click', ()=>{
         style_group.classList.remove('open');
         gFont.classList.add('open');
+    })
+}
+if(ham){
+    ham.addEventListener('click', ()=>{
+        sNav.classList.add('open');
+    })
+}
+if(sDone){
+    sDone.addEventListener('click', ()=>{
+        sNav.classList.remove('open');
+    })
+}
+
+if(sFont){
+    sFont.addEventListener('click', ()=>{
+        sNav.classList.remove('open');
+        gFont.classList.add('open');
+    })
+}
+if(sAni){
+    sAni.addEventListener('click', ()=>{
+        sNav.classList.remove('open');
+        gAni.classList.add('open');
+        text.classList.add('open');
+    })
+}
+if(sBord){
+    sBord.addEventListener('click', ()=>{
+        sNav.classList.remove('open');
+        gBord.classList.add('open');
+        text.classList.add('open');
+    })
+}
+
+if(ani1){
+    ani1.addEventListener('click', ()=>{
+        t.style.animation = 'slideAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}
+if(ani2){
+    ani2.addEventListener('click', ()=>{
+        t.style.animation = 'fadeAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}if(ani3){
+    ani3.addEventListener('click', ()=>{
+        t.style.animation = 'scaleAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}if(ani4){
+    ani4.addEventListener('click', ()=>{
+        t.style.animation = 'colorChangeAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}if(ani5){
+    ani5.addEventListener('click', ()=>{
+        t.style.animation = 'bounceAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}
+if(ani6){
+    ani6.addEventListener('click', ()=>{
+        t.style.animation = 'waverAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}
+if(ani7){
+    ani7.addEventListener('click', ()=>{
+        t.style.animation = 'pulseAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+    })
+}
+
+if(border1){
+    border1.addEventListener('click', ()=>{
+        text.style.border = ' 3px solid gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border2){
+    border2.addEventListener('click', ()=>{
+        text.style.border = ' 3px dashed gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border3){
+    border3.addEventListener('click', ()=>{
+        text.style.border = ' 3px dotted gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border4){
+    border4.addEventListener('click', ()=>{
+        text.style.border = ' 3px double gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border5){
+    border5.addEventListener('click', ()=>{
+        text.style.border = ' 3px inset gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border6){
+    border6.addEventListener('click', ()=>{
+        text.style.border = ' 3px outset gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border7){
+    border7.addEventListener('click', ()=>{
+        text.style.border = ' 3px groove gray';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
+    })
+}
+if(border8){
+    border8.addEventListener('click', ()=>{
+        text.style.border = ' 3px ridge blue';
+        t.style.padding = '10px 15px';
+        t.style.borderRadius = '10px';
     })
 }
