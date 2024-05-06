@@ -57,6 +57,9 @@ let border6 = document.getElementById("border6");
 let border7 = document.getElementById("border7");
 let border8 = document.getElementById("border8");
 
+let input = document.getElementById("text_inp").value;
+let inp_done = document.getElementById("done_head");
+
 if(font){
     font.addEventListener('click', ()=>{
         font_bg.classList.remove('open');
@@ -95,21 +98,21 @@ if(bord){
 }
 if(fDone){
     fDone.addEventListener('click', ()=>{
-        sNav.classList.add('open');
+        // sNav.classList.add('open');
         gFont.classList.remove('open');
         text.classList.remove('open');
     })
 }
 if(aDone){
     aDone.addEventListener('click', ()=>{
-        sNav.classList.add('open');
+        // sNav.classList.add('open');
         gAni.classList.remove('open');
         text.classList.remove('open');
     })
 }
 if(bDone){
     bDone.addEventListener('click', ()=>{
-        sNav.classList.add('open');
+        // sNav.classList.add('open');
         gBord.classList.remove('open');
         text.classList.remove('open');
     })
@@ -193,7 +196,7 @@ if(sBord){
 
 if(ani1){
     ani1.addEventListener('click', ()=>{
-        t.style.animation = 'slideAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'slideAnimation 5s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }
 if(ani2){
@@ -280,3 +283,11 @@ if(border8){
         t.style.borderRadius = '10px';
     })
 }
+
+if(inp_done){
+    inp_done.addEventListener('click', ()=>{
+        let input = document.getElementById("text_inp").value;
+        t.innerHTML = input;
+    })
+}
+
