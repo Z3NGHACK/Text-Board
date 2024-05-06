@@ -1,6 +1,6 @@
-// window.onload = function() {
-//     document.body.classList.add('fade-in');
-// }
+window.onload = function() {
+    document.body.classList.add('fade-in');
+}
 
 
 const font = document.getElementById("font_icon");
@@ -59,6 +59,12 @@ let border8 = document.getElementById("border8");
 
 let input = document.getElementById("text_inp").value;
 let inp_done = document.getElementById("done_head");
+
+let style1 = document.getElementById("style1");
+let style2 = document.getElementById("style2");
+let style3 = document.getElementById("style3");
+let style4 = document.getElementById("style4");
+let style5 = document.getElementById("style5");
 
 if(font){
     font.addEventListener('click', ()=>{
@@ -142,6 +148,28 @@ if(style){
         style_group.classList.add('open');
         gFont.classList.remove('open');
         text.classList.add('open');
+
+        if(style1){
+            style1.addEventListener('click', ()=>{
+                t.style.fontFamily = 'serif';
+            })
+        }if(style2){
+            style2.addEventListener('click', ()=>{
+                t.style.fontFamily = 'sans-serif';
+            })
+        }if(style3){
+            style3.addEventListener('click', ()=>{
+                t.style.fontFamily = 'monospace';
+            })
+        }if(style4){
+            style4.addEventListener('click', ()=>{
+                t.style.fontFamily = 'cursive';
+            })
+        }if(style5){
+            style5.addEventListener('click', ()=>{
+                t.style.fontFamily = 'fantasy';
+            })
+        }
     })
 }
 if(fcDone){
@@ -201,29 +229,29 @@ if(ani1){
 }
 if(ani2){
     ani2.addEventListener('click', ()=>{
-        t.style.animation = 'fadeAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'fadeAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }if(ani3){
     ani3.addEventListener('click', ()=>{
-        t.style.animation = 'scaleAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'scaleAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }if(ani4){
     ani4.addEventListener('click', ()=>{
-        t.style.animation = 'colorChangeAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'colorChangeAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }if(ani5){
     ani5.addEventListener('click', ()=>{
-        t.style.animation = 'bounceAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'bounceAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }
 if(ani6){
     ani6.addEventListener('click', ()=>{
-        t.style.animation = 'waverAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'waverAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }
 if(ani7){
     ani7.addEventListener('click', ()=>{
-        t.style.animation = 'pulseAnimation 1s infinite'; // Setting animation, duration, and iteration count in one line
+        t.style.animation = 'pulseAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
     })
 }
 
@@ -290,4 +318,3 @@ if(inp_done){
         t.innerHTML = input;
     })
 }
-
