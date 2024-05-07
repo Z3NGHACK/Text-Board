@@ -396,54 +396,78 @@ body{
 }
 
 
-
 #font_color{
     position: absolute;
     background-color: rgb(116, 231, 193);
-    width: 300px;
-    height: 200px;
+    width: 250px;
     animation: forwards;
     transition: 0.5s ease;
-    right: -300px;
+    right: -500px;
     top: 80px;
     display: flex;
     flex-direction: column;
     border-radius: 0 0 0 10px;
     align-items: center;
-    padding-top: 30px;
+    padding: 30px 0 70px 10px;
 }
 #font_color.open{
     right: 0;
 }
 #font_color h3{
-    margin-bottom: 20px;
-    text-decoration: underline;
     color: #fff;
+    text-decoration: underline;
 }
-#font_color .inp_font_color{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    color: gray;
+#font_render{
+    font-weight: 700;
+    color: #000;
 }
-#font_color input{
-    width: 150px;
-    height: 30px;
+.color-wrap{
+    height: 50px;
     border-radius: 10px;
-    border: none;
-    text-align: center;
-    transition: 0.2s ease;
+    width: 95%;
+    background-color: #000;
 }
-#font_color input:hover{
-    background-color: #e6e6e6;
+#fcolor_display{
+    height: 50px;
+    border-radius: 10px;
 }
+.slider{
+    display: flex;
+    flex-wrap: wrap;
+}
+.slider label{
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    background-color: red;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 10px 5px  0;
+}
+.slider .ninput{
+    width: 70px;
+    margin: 10px 10px 5px  0;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.slider input{
+    width: 220px;
+}
+
+h3{
+    color: #fff;
+    text-decoration: underline;
+}
+
+
 
 #font_bg{
     position: absolute;
     background-color: rgb(116, 231, 193);
     width: 300px;
-    height: 200px;
     animation: forwards;
     transition: 0.5s ease;
     right: -300px;
@@ -453,9 +477,17 @@ body{
     border-radius: 0 0 0 10px;
     align-items: center;
     padding-top: 30px;
+    padding-bottom: 70px;
 }
 #font_bg.open{
     right: 0;
+}
+#font-bg a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    color: #fff;
 }
 #font_bg h3{
     margin-bottom: 20px;
