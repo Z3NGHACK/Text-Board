@@ -33,19 +33,48 @@
                 </div>
 
                 <div id="font_color" class="color_fab">
-                    <h3>Color</h3>
-                    <div class="inp_font_color">
-                        <span>Enter color code: </span>
-                        <input placeholder="Input" id="font_color_code">
+                    <h3>Font Color</h3>
+                    <div id="font_render">rgb(0, 0, 0)</div>
+                    <div class="color-wrap" id="fcolor_display">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: red;" for="red_font">Red:</label>
+                        <input type="number" id="red_font" class="ninput">
+                        <input id="fontRCode" type="range" min="0" max="255" value="0">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: green;" for="green_font">Green:</label>
+                        <input type="number" id="green_font" class="ninput">
+                        <input id="fontGCode" type="range" min="0" max="255" value="0">
+                    </div>
+                    <div class="slider">
+                        <label  style="background-color: blue;" for="blue_font">Blue:</label>
+                        <input type="number" id="blue_font" class="ninput">
+                        <input id="fontBCode" type="range" min="0" max="255" value="0">
                     </div>
                     <div id="done_btn_color" class="done_btn">Done</div>
                 </div>
+                
 
                 <div id="font_bg" class="color_fab">
                     <h3>Background Color</h3>
-                    <div class="inp_bg_color">
-                        <span>Enter color code: </span>
-                        <input placeholder="Input" id="bg_color_code">
+                    <div id="bg_render">rgb(0, 0, 0)</div>
+                    <div class="color-wrap" id="bgcolor_display">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: red;" for="red_font">Red:</label>
+                        <input type="number" id="red_bg" class="ninput">
+                        <input id="bgRCode" type="range" min="0" max="255" value="0">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: green;" for="green_font">Green:</label>
+                        <input type="number" id="green_bg" class="ninput">
+                        <input id="bgGCode" type="range" min="0" max="255" value="0">
+                    </div>
+                    <div class="slider">
+                        <label  style="background-color: blue;" for="blue_font">Blue:</label>
+                        <input type="number" id="blue_bg" class="ninput">
+                        <input id="bgBCode" type="range" min="0" max="255" value="0">
                     </div>
                     <div id="done_btn_bg" class="done_btn">Done</div>
                 </div>
