@@ -1,6 +1,6 @@
-window.onload = function() {
-    document.body.classList.add('fade-in');
-}
+// window.onload = function() {
+//     document.body.classList.add('fade-in');
+// }
 
 
 const font = document.getElementById("font_icon");
@@ -65,6 +65,24 @@ let style2 = document.getElementById("style2");
 let style3 = document.getElementById("style3");
 let style4 = document.getElementById("style4");
 let style5 = document.getElementById("style5");
+
+const fRed = document.getElementById("fontRCode");
+const fGreen = document.getElementById("fontGCode");
+const fBlue = document.getElementById("fontBCode");
+const rendFont = document.getElementById("font_render");
+const fcolor_display = document.getElementById("fcolor_display");
+const numFRed = document.getElementById("red_font").value;
+const numFGreen = document.getElementById("green_font").value;
+const numFBlue = document.getElementById("blue_font").value;
+
+const bgRed = document.getElementById("bgRCode");
+const bgGreen = document.getElementById("bgGCode");
+const bgBlue = document.getElementById("bgBCode");
+const rendbg = document.getElementById("bg_render");
+const bgcolor_display = document.getElementById("bgcolor_display");
+const numBgRed = document.getElementById("red_bg").value;
+const numBgGreen = document.getElementById("green_bg").value;
+const numBgBlue = document.getElementById("blue_bg").value;
 
 if(font){
     font.addEventListener('click', ()=>{
@@ -318,3 +336,39 @@ if(inp_done){
         t.innerHTML = input;
     })
 }
+
+
+
+function updateColorBg() {
+    const redbgVal = bgRed.value;
+    const greenbgVal = bgGreen.value;
+    const bluebgVal = bgBlue.value;
+    const fcb = `rgb(${redbgVal}, ${greenbgVal}, ${bluebgVal})`;
+
+    rendbg.style.color = fcb;
+    rendbg.innerHTML = fcb;
+    bgcolor_display.style.backgroundColor = fcb;
+    text.style.backgroundColor = fcb;
+}
+
+bgRed.addEventListener('input', updateColorBg);
+bgGreen.addEventListener('input', updateColorBg);
+bgBlue.addEventListener('input', updateColorBg);
+
+function updateColorFont() {
+    const redFVal = fRed.value;
+    const greenFVal = fGreen.value;
+    const blueFVal = fBlue.value;
+    const fc = `rgb(${redFVal}, ${greenFVal}, ${blueFVal})`;
+
+    rendFont.style.color = fc;
+    rendFont.innerHTML = fc;
+    fcolor_display.style.backgroundColor = fc;
+
+    // Set the font color of element with id 'text_control'
+    t.style.color = fc;
+}
+
+fRed.addEventListener('input', updateColorFont);
+fGreen.addEventListener('input', updateColorFont);
+fBlue.addEventListener('input', updateColorFont);
