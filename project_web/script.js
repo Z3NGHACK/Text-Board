@@ -1,374 +1,163 @@
-// window.onload = function() {
-//     document.body.classList.add('fade-in');
-// }
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-80">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Project Text Board
+        </title>
+        <!--Icon-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <section class="editor">
+            <div class="header">
+                <div id="navbar">
+                    <a class="back"><i class="ri-arrow-left-s-line" id="back_icon"  onclick="window.location.href='index.html';"></i></a>
+                    <div class="inp m">
+                        <input placeholder="Enter your text"  id="text_inp">
+                        <div id="done_head">Done</div>
+                    </div>
+                    <a id="font_icon" class="m"><i class="ri-font-size"></i></a>
+                    <a id="ani_icon" class="m"><i class="ri-star-smile-line"></i></a>
+                    <a id="bord_icon" class="m"><i class="ri-shape-2-line"></i></a>
+                    <a id="hamburger" class="ham"><i class="ri-menu-line"></i></a>
+                </div>
 
+                <div id="font_style">
+                    <div id="color" class="font">Font Color</div>
+                    <div id="bg_font" class="font">Back ground Color</div>
+                    <div id="style" class="font">Font Style</div>
+                    <div id="bg_style" class="font">Background Style</div>
+                    <div id="done_font" class="done_btn">Done</div>
+                </div>
 
-const font = document.getElementById("font_icon");
-const ani = document.getElementById("ani_icon");
-const bord = document.getElementById("bord_icon");
-const gFont = document.getElementById("font_style");
-const gAni = document.getElementById("animation");
-const gBord = document.getElementById("border_style");
+                <div id="font_color" class="color_fab">
+                    <h3>Font Color</h3>
+                    <div id="font_render">rgb(0, 0, 0)</div>
+                    <div class="color-wrap" id="fcolor_display">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: red;" for="red_font">Red:</label>
+                        <input type="number" id="red_font" class="ninput">
+                        <input id="fontRCode" type="range" min="0" max="255" value="0" class="rslide" style="accent-color: red;">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: green;" for="green_font">Green:</label>
+                        <input type="number" id="green_font" class="ninput">
+                        <input id="fontGCode" type="range" min="0" max="255" value="0" class="gslide" style="accent-color: green;">
+                    </div>
+                    <div class="slider">
+                        <label  style="background-color: blue;" for="blue_font">Blue:</label>
+                        <input type="number" id="blue_font" class="ninput">
+                        <input id="fontBCode" type="range" min="0" max="255" value="0" class="bslide" style="accent-color: blue;">
+                    </div>
+                    <div id="done_btn_color" class="done_btn">Done</div>
+                </div>
+                
 
-const fDone = document.getElementById("done_font");
-const aDone = document.getElementById("done_ani");
-const bDone = document.getElementById("done_border");
+                <div id="font_bg" class="color_fab">
+                    <h3>Background Color</h3>
+                    <div id="bg_render">rgb(0, 0, 0)</div>
+                    <div class="color-wrap" id="bgcolor_display">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: red;" for="red_font">Red:</label>
+                        <input type="number" id="red_bg" class="ninput">
+                        <input id="bgRCode" type="range" min="0" max="255" value="0" style="accent-color: red;">
+                    </div>
+                    <div class="slider">
+                        <label style="background-color: green;" for="green_font">Green:</label>
+                        <input type="number" id="green_bg" class="ninput">
+                        <input id="bgGCode" type="range" min="0" max="255" value="0" style="accent-color: green;">
+                    </div>
+                    <div class="slider">
+                        <label  style="background-color: blue;" for="blue_font">Blue:</label>
+                        <input type="number" id="blue_bg" class="ninput">
+                        <input id="bgBCode" type="range" min="0" max="255" value="0" style="accent-color: blue;">
+                    </div>
+                    <div id="done_btn_bg" class="done_btn">Done</div>
+                </div>
 
-const color = document.getElementById("color");
-const bg_font  = document.getElementById("bg_font");
-const style  = document.getElementById("style");
+                <div id="style_group">
+                    <h3>Font Style</h3>
+                    <div id="style1" class="style" style="font-family: serif;">Serif</div>
+                    <div id="style2" class="style" style="font-family: sans-serif;">Sans-Serif</div>
+                    <div id="style3" class="style" style="font-family: monospace;">Monospace</div>
+                    <div id="style4" class="style" style="font-family: cursive;">Cursive</div>
+                    <div id="style5" class="style" style="font-family: fantasy;">Fantasy</div>
+                    <div id="done_btn_style" class="done_btn">Done</div>
+                </div>
 
-const font_color = document.getElementById("font_color");
-const font_bg = document.getElementById("font_bg");
-const style_group = document.getElementById("style_group");
+                <div id="bg_img">
+                    <h3>Background Image</h3>
+                    <div id="img1" class="img"><img src="img/air.jpg"></div> 
+                    <div id="img2" class="img"><img src="img/board.jpg"></div> 
+                    <div id="img3" class="img"><img src="img/gal.jpg"></div> 
+                    <div id="img4" class="img"><img src="img/jungle.jpg"></div> 
+                    <div id="img5" class="img"><img src="img/rock.jpg"></div> 
+                    <div id="img6" class="img"><img src="img/sand.jpg"></div> 
+                    <div id="img7" class="img"><img src="img/water.jpg"></div> 
+                    <div id="img8" class="img"><img src="img/wood.jpg"></div>
+                    <div id="img9" class="img"></div> 
+                    <div id="done_btn_img" class="done_btn">Done</div>
+                </div>
 
-const fcDone = document.getElementById("done_btn_color");
-const bgDone = document.getElementById("done_btn_bg");
-const fsDone = document.getElementById("done_btn_style");
+                    <!-- <div id="sticker">
+                        <div class="stick">1</div>
+                        <div class="stick">2</div>
+                        <div class="stick">3</div>
+                        <div class="stick">4</div>
+                        <div class="stick">5</div>
+                        <div class="stick">6</div>
+                    </div> -->
 
-let text = document.getElementById("text_control");
+                <div id="animation">
+                    <h3>Animation List</h3>
+                    <div id="ani1" class="ani">animtion1</div>
+                    <div id="ani2" class="ani">animtion2</div>
+                    <div id="ani3" class="ani">animtion3</div>
+                    <div id="ani4" class="ani">animtion4</div>
+                    <div id="ani5" class="ani">animtion5</div>
+                    <div id="ani6" class="ani">animtion6</div>
+                    <div id="ani7" class="ani">animtion7</div>
+                    <div id="done_ani" class="done_btn">Done</div>
+                </div>
 
-const sNav = document.getElementById("semi_navbar");
-const ham = document.getElementById("hamburger");
-const sDone = document.getElementById("semi_done");
+                <div id="border_style">
+                    <h3>Border List</h3>
+                    <div><a id="border1" class="border" style="border-style: solid; border-color: #fff">solid</a></div>
+                    <div><a id="border2" class="border" style="border-style: dashed; border-color: #fff">dashed</a></div>
+                    <div><a id="border3" class="border" style="border-style: dotted; border-color: #fff">dotted</a></div>
+                    <div><a id="border4" class="border" style="border-style: double; border-color: #fff">double</a></div>
+                    <div><a id="border5" class="border" style="border-style: inset; border-color: #fff">inset</a></div>
+                    <div><a id="border6" class="border" style="border-style: outset; border-color: #fff">outset</a></div>
+                    <div><a id="border7" class="border" style="border-style: groove; border-color: #fff">groove</a></div>
+                    <div><a id="border8" class="border" style="border-style: ridge;border-color: #fff">ridge</a></div>
+                    <a id="done_border" class="done_btn">Done</a>
+                </div>
 
-const font_icon = document.getElementsByClassName("font-icon");
+                <div id="semi_navbar">
+                    <div class="inp m">
+                        <input placeholder="Enter your text"  id="text_inps">
+                        <div id="sdone_head" class="shead_done">Done</div>
+                    </div>
+                    <a id="font_icons" class="m m1"><i class="ri-font-size"></i>Font Custom</a>
+                    <a id="ani_icons" class="m"><i class="ri-star-smile-line"></i>Animation</a>
+                    <a id="bord_icons" class="m"><i class="ri-shape-2-line"></i>Border</a>
+                    <div id="semi_done" class="done_btn">Done</div>
+                </div>
+            </div>
 
-const sFont = document.getElementById("font_icons");
-const sAni = document.getElementById("ani_icons");
-const sBord = document.getElementById("bord_icons");
-
-let t = document.getElementById("text");
-
-let ani1 = document.getElementById("ani1");
-let ani2 = document.getElementById("ani2");
-let ani3 = document.getElementById("ani3");
-let ani4 = document.getElementById("ani4");
-let ani5 = document.getElementById("ani5");
-let ani6 = document.getElementById("ani6");
-let ani7 = document.getElementById("ani7");
-
-let border1 = document.getElementById("border1");
-let border2 = document.getElementById("border2");
-let border3 = document.getElementById("border3");
-let border4 = document.getElementById("border4");
-let border5 = document.getElementById("border5");
-let border6 = document.getElementById("border6");
-let border7 = document.getElementById("border7");
-let border8 = document.getElementById("border8");
-
-let input = document.getElementById("text_inp").value;
-let inp_done = document.getElementById("done_head");
-
-let style1 = document.getElementById("style1");
-let style2 = document.getElementById("style2");
-let style3 = document.getElementById("style3");
-let style4 = document.getElementById("style4");
-let style5 = document.getElementById("style5");
-
-const fRed = document.getElementById("fontRCode");
-const fGreen = document.getElementById("fontGCode");
-const fBlue = document.getElementById("fontBCode");
-const rendFont = document.getElementById("font_render");
-const fcolor_display = document.getElementById("fcolor_display");
-const numFRed = document.getElementById("red_font").value;
-const numFGreen = document.getElementById("green_font").value;
-const numFBlue = document.getElementById("blue_font").value;
-
-const bgRed = document.getElementById("bgRCode");
-const bgGreen = document.getElementById("bgGCode");
-const bgBlue = document.getElementById("bgBCode");
-const rendbg = document.getElementById("bg_render");
-const bgcolor_display = document.getElementById("bgcolor_display");
-const numBgRed = document.getElementById("red_bg").value;
-const numBgGreen = document.getElementById("green_bg").value;
-const numBgBlue = document.getElementById("blue_bg").value;
-
-if(font){
-    font.addEventListener('click', ()=>{
-        font_bg.classList.remove('open');
-        font_color.classList.remove('open');
-        style_group.classList.remove('open');
-        gFont.classList.add('open');
-        gAni.classList.remove('open');
-        gBord.classList.remove('open');
-        text.classList.add('open');
-        sNav.classList.remove('open');
-    })
-}
-if(ani){
-    ani.addEventListener('click', ()=>{
-        font_bg.classList.remove('open');
-        font_color.classList.remove('open');
-        style_group.classList.remove('open');
-        gAni.classList.add('open');
-        gFont.classList.remove('open');
-        gBord.classList.remove('open');
-        text.classList.add('open');
-        sNav.classList.remove('open');
-    })
-}
-if(bord){
-    bord.addEventListener('click', ()=>{
-        font_bg.classList.remove('open');
-        font_color.classList.remove('open');
-        style_group.classList.remove('open');
-        gBord.classList.add('open');
-        gFont.classList.remove('open');
-        gAni.classList.remove('open');
-        text.classList.add('open');
-        sNav.classList.remove('open');
-    })
-}
-if(fDone){
-    fDone.addEventListener('click', ()=>{
-        // sNav.classList.add('open');
-        gFont.classList.remove('open');
-        text.classList.remove('open');
-    })
-}
-if(aDone){
-    aDone.addEventListener('click', ()=>{
-        // sNav.classList.add('open');
-        gAni.classList.remove('open');
-        text.classList.remove('open');
-    })
-}
-if(bDone){
-    bDone.addEventListener('click', ()=>{
-        // sNav.classList.add('open');
-        gBord.classList.remove('open');
-        text.classList.remove('open');
-    })
-}
-if(color){
-    color.addEventListener('click', ()=>{
-        font_color.classList.add('open');
-        font_bg.classList.remove('open');
-        style_group.classList.remove('open');
-        gFont.classList.remove('open');
-        text.classList.add('open');
-    })
-}
-if(bg_font){
-    bg_font.addEventListener('click', ()=>{
-        font_color.classList.remove('open');
-        font_bg.classList.add('open');
-        style_group.classList.remove('open');
-        gFont.classList.remove('open');
-        text.classList.add('open');
-    })
-}
-if(style){
-    style.addEventListener('click', ()=>{
-        font_color.classList.remove('open');
-        font_bg.classList.remove('open');
-        style_group.classList.add('open');
-        gFont.classList.remove('open');
-        text.classList.add('open');
-
-        if(style1){
-            style1.addEventListener('click', ()=>{
-                t.style.fontFamily = 'serif';
-            })
-        }if(style2){
-            style2.addEventListener('click', ()=>{
-                t.style.fontFamily = 'sans-serif';
-            })
-        }if(style3){
-            style3.addEventListener('click', ()=>{
-                t.style.fontFamily = 'monospace';
-            })
-        }if(style4){
-            style4.addEventListener('click', ()=>{
-                t.style.fontFamily = 'cursive';
-            })
-        }if(style5){
-            style5.addEventListener('click', ()=>{
-                t.style.fontFamily = 'fantasy';
-            })
-        }
-    })
-}
-if(fcDone){
-    fcDone.addEventListener('click', ()=>{
-        font_color.classList.remove('open');
-        gFont.classList.add('open');
-    })
-}
-if(bgDone){
-    bgDone.addEventListener('click', ()=>{
-        font_bg.classList.remove('open');
-        gFont.classList.add('open');
-    })
-}
-if(fsDone){
-    fsDone.addEventListener('click', ()=>{
-        style_group.classList.remove('open');
-        gFont.classList.add('open');
-    })
-}
-if(ham){
-    ham.addEventListener('click', ()=>{
-        sNav.classList.add('open');
-    })
-}
-if(sDone){
-    sDone.addEventListener('click', ()=>{
-        sNav.classList.remove('open');
-    })
-}
-
-if(sFont){
-    sFont.addEventListener('click', ()=>{
-        sNav.classList.remove('open');
-        gFont.classList.add('open');
-    })
-}
-if(sAni){
-    sAni.addEventListener('click', ()=>{
-        sNav.classList.remove('open');
-        gAni.classList.add('open');
-        text.classList.add('open');
-    })
-}
-if(sBord){
-    sBord.addEventListener('click', ()=>{
-        sNav.classList.remove('open');
-        gBord.classList.add('open');
-        text.classList.add('open');
-    })
-}
-
-if(ani1){
-    ani1.addEventListener('click', ()=>{
-        t.style.animation = 'slideAnimation 5s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-if(ani2){
-    ani2.addEventListener('click', ()=>{
-        t.style.animation = 'fadeAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}if(ani3){
-    ani3.addEventListener('click', ()=>{
-        t.style.animation = 'scaleAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}if(ani4){
-    ani4.addEventListener('click', ()=>{
-        t.style.animation = 'colorChangeAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}if(ani5){
-    ani5.addEventListener('click', ()=>{
-        t.style.animation = 'bounceAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-if(ani6){
-    ani6.addEventListener('click', ()=>{
-        t.style.animation = 'waverAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-if(ani7){
-    ani7.addEventListener('click', ()=>{
-        t.style.animation = 'pulseAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-
-if(border1){
-    border1.addEventListener('click', ()=>{
-        text.style.border = ' 3px solid gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border2){
-    border2.addEventListener('click', ()=>{
-        text.style.border = ' 3px dashed gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border3){
-    border3.addEventListener('click', ()=>{
-        text.style.border = ' 3px dotted gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border4){
-    border4.addEventListener('click', ()=>{
-        text.style.border = ' 3px double gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border5){
-    border5.addEventListener('click', ()=>{
-        text.style.border = ' 3px inset gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border6){
-    border6.addEventListener('click', ()=>{
-        text.style.border = ' 3px outset gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border7){
-    border7.addEventListener('click', ()=>{
-        text.style.border = ' 3px groove gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border8){
-    border8.addEventListener('click', ()=>{
-        text.style.border = ' 3px ridge blue';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-
-if(inp_done){
-    inp_done.addEventListener('click', ()=>{
-        let input = document.getElementById("text_inp").value;
-        t.innerHTML = input;
-    })
-}
-
-
-
-function updateColorBg() {
-    const redbgVal = bgRed.value;
-    const greenbgVal = bgGreen.value;
-    const bluebgVal = bgBlue.value;
-    const fcb = `rgb(${redbgVal}, ${greenbgVal}, ${bluebgVal})`;
-
-    rendbg.style.color = fcb;
-    rendbg.innerHTML = fcb;
-    bgcolor_display.style.backgroundColor = fcb;
-    text.style.backgroundColor = fcb;
-}
-
-bgRed.addEventListener('input', updateColorBg);
-bgGreen.addEventListener('input', updateColorBg);
-bgBlue.addEventListener('input', updateColorBg);
-
-function updateColorFont() {
-    const redFVal = fRed.value;
-    const greenFVal = fGreen.value;
-    const blueFVal = fBlue.value;
-    const fc = `rgb(${redFVal}, ${greenFVal}, ${blueFVal})`;
-
-    rendFont.style.color = fc;
-    rendFont.innerHTML = fc;
-    fcolor_display.style.backgroundColor = fc;
-
-    // Set the font color of element with id 'text_control'
-    t.style.color = fc;
-}
-
-fRed.addEventListener('input', updateColorFont);
-fGreen.addEventListener('input', updateColorFont);
-fBlue.addEventListener('input', updateColorFont);
+            <div class="body_text">
+                <div id="text_control">
+                    <span id="text">
+                        Text Board <!--&#128522-->
+                    </span>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
