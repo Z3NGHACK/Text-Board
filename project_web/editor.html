@@ -9,8 +9,16 @@
         <!--Icon-->
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css" type="text/css">
-    </head>
+
+        <!--google font link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Dancing+Script:wght@400..700&family=Danfo&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Indie+Flower&family=Jacquard+12&family=Jaro:opsz@6..72&family=Major+Mono+Display&family=Micro+5+Charted&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Oswald:wght@200..700&family=Pacifico&family=Permanent+Marker&family=Poetsen+One&family=Poppins:wght@400;500;600;700;800;900&family=Rubik+Mono+One&family=Shadows+Into+Light&family=Titan+One&display=swap" rel="stylesheet">
+    
+
+</head>
     <body>
+        <div class="bgImg"></div>
         <section class="editor">
             <div class="header">
                 <div id="navbar">
@@ -29,7 +37,8 @@
                     <div id="color" class="font">Font Color</div>
                     <div id="bg_font" class="font">Back ground Color</div>
                     <div id="style" class="font">Font Style</div>
-                    <div id="bg_style" class="font">Background Style</div>
+                    <!-- <div id="bg_style" class="font">Background Style</div> -->
+                    <div id="emo_btn" class="font">Emoji</div>
                     <div id="done_font" class="done_btn">Done</div>
                 </div>
 
@@ -80,13 +89,61 @@
                     <div id="done_btn_bg" class="done_btn">Done</div>
                 </div>
 
+                <div id="emoji_group">
+                    <h3>Emoji</h3>
+                    <div class="g">
+                        <div class="g1">
+                            <span id="emo1">&#128522</span>
+                            <span id="emo2">&#128512</span>
+                            <span id="emo3">&#128514</span>
+                            <span id="emo4">&#128517</span>
+                            <span id="emo5">&#128520</span>
+                            <span id="emo6">&#128519</span>
+                            <span id="emo7">&#128523</span>
+                            <span id="emo8">&#128525</span>
+                            <span id="emo9">&#128526</span>
+                            <span id="emo10">&#128527</span>
+                        </div>
+                        <div class="g2">
+                            <span id="emo11">&#128530</span>
+                            <span id="emo12">&#128531</span>
+                            <span id="emo13">&#128534</span>
+                            <span id="emo14">&#128536</span>
+                            <span id="emo15">&#128541</span>
+                            <span id="emo16">&#128542</span>
+                            <span id="emo17">&#128543</span>
+                            <span id="emo18">&#128545</span>
+                            <span id="emo19">&#128548</span>
+                            <span id="emo20">&#128557</span>
+                        </div>
+                    </div>
+                    <div class="done_btn" id="done_emoji">Done</div>
+                </div>
+
                 <div id="style_group">
                     <h3>Font Style</h3>
-                    <div id="style1" class="style" style="font-family: serif;">Serif</div>
-                    <div id="style2" class="style" style="font-family: sans-serif;">Sans-Serif</div>
-                    <div id="style3" class="style" style="font-family: monospace;">Monospace</div>
-                    <div id="style4" class="style" style="font-family: cursive;">Cursive</div>
-                    <div id="style5" class="style" style="font-family: fantasy;">Fantasy</div>
+                    <div class="sg">
+                        <div id="style1" class="style" style="font-family: 'Danfo';">Danfo</div>
+                        <div id="style2" class="style" style="font-family: 'Permanent Marker';">Permanent Marker</div>
+                        <div id="style3" class="style" style="font-family: 'Poppins';">Poppins</div>
+                        <!-- <div id="style4" class="style" style="font-family: 'Jacquard 12';">Jacquard 12</div> -->
+                        <div id="style5" class="style" style="font-family: 'Poetsen One';">Poetsen One</div>
+                        <div id="style6" class="style" style="font-family: 'Oswald';">Oswald</div>
+                        <!-- <div id="style7" class="style" style="font-family: 'Noto Sans Khmer';">Danfo</div>
+                        <div id="style8" class="style" style="font-family: 'Noto Sans JP';">Noto Sans Japanese</div> -->
+                        <!-- <div id="style9" class="style" style="font-family: 'Major Mono Display';">Major Mono Display</div> -->
+                        <div id="style10" class="style" style="font-family: 'Jaro';">jaro</div>
+                        <div id="style11" class="style" style="font-family: 'Dancing Script';">Dancing Script</div>
+                        <div id="style12" class="style" style="font-family: 'Anton';">Anton</div>
+                        <!-- <div id="style13" class="style" style="font-family: 'Exo 2';">Exo2</div> -->
+                        <div id="style14" class="style" style="font-family: 'Pacifico';">Pacifico</div>
+                        <div id="style15" class="style" style="font-family: 'Shadows Into Light';">Shadows Into Light</div>
+                        <!-- <div id="style16" class="style" style="font-family: 'Abril Fatface';">Abril Fatface</div>
+                        <div id="style17" class="style" style="font-family: 'Micro 5 Charted';">Micro 5 Charted</div> -->
+                        <div id="style18" class="style" style="font-family: 'Rubik Mono One';">Rubik Mono One</div>
+                        <div id="style19" class="style" style="font-family: 'Indie FLower';">Indie Flower</div>
+                        <div id="style20" class="style" style="font-family: 'Titan One';">Titan One</div>
+                    </div>
                     <div id="done_btn_style" class="done_btn">Done</div>
                 </div>
 
@@ -100,6 +157,7 @@
                     <div id="img6" class="img"><img src="img/sand.jpg"></div> 
                     <div id="img7" class="img"><img src="img/water.jpg"></div> 
                     <div id="img8" class="img"><img src="img/wood.jpg"></div>
+                    <div id="img10" class="img"><img src="img/led.jpg"></div>
                     <div id="img9" class="img"></div> 
                     <div id="done_btn_img" class="done_btn">Done</div>
                 </div>
@@ -115,16 +173,26 @@
 
                 <div id="animation">
                     <h3>Animation List</h3>
-                    <div id="ani1" class="ani">animtion1</div>
-                    <div id="ani2" class="ani">animtion2</div>
-                    <div id="ani3" class="ani">animtion3</div>
-                    <div id="ani4" class="ani">animtion4</div>
-                    <div id="ani5" class="ani">animtion5</div>
-                    <div id="ani6" class="ani">animtion6</div>
-                    <div id="ani7" class="ani">animtion7</div>
+                    <div id="ani1" class="ani"><a class="a1">animtion1></a></div>
+                    <div id="ani2" class="ani"><a class="a2">animtion1</a></div>
+                    <div id="ani3" class="ani"><a class="a3">animtion1</a></div>
+                    <div id="ani4" class="ani"><a class="a4">animtion1</a></div>
+                    <div id="ani5" class="ani"><a class="a5">animtion1</a></div>
+                    <div id="ani6" class="ani"><a class="a6">animtion1</a></div>
+                    <div id="ani7" class="ani"><a class="a7">animtion1</a></div>
                     <div id="done_ani" class="done_btn">Done</div>
                 </div>
 
+                <div id="bg_part">
+                    <h3>Board Style</h3>
+                    <div id="border_group">
+                        Border Style
+                    </div>
+                    <div id="background_styl">
+                        Background Style
+                    </div>
+                    <div class="done_btn" id="done_bord_sty">Done</div>
+                </div>
                 <div id="border_style">
                     <h3>Border List</h3>
                     <div><a id="border1" class="border" style="border-style: solid; border-color: #fff">solid</a></div>
@@ -152,9 +220,14 @@
 
             <div class="body_text">
                 <div id="text_control">
-                    <span id="text">
-                        Text Board <!--&#128522-->
-                    </span>
+                    <div id="text">
+                        <span >
+                            Text Board seflksncklsmv
+                        </span>
+                        <span id="emo_main">
+                            &#128522
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
