@@ -14,12 +14,20 @@ const gBord = document.getElementById("border_style");
 //new implement of border group
 const bg_part = document.getElementById("bg_part");
 const border_group = document.getElementById("border_group");
-const background_styl = document.getElementById("background_styl")
+const background_styl = document.getElementById("background_styl");
+
+//new implement of animation group
+const aniOpt = document.getElementById("ani_option");
+const textAni = document.getElementById("textAni");
+const bgAni = document.getElementById("bgAni");
+const background_ani = document.getElementById("background_ani");
+const done_bgAni = document.getElementById("done_bgAni");
 //done btn for each main page
 const fDone = document.getElementById("done_font");
 const aDone = document.getElementById("done_ani");
 const bDone = document.getElementById("done_border");
 const done_bord_sty = document.getElementById("done_bord_sty");
+const doneListAni = document.getElementById("done_list");
 //element in font style
 const color = document.getElementById("color");
 const bg_font  = document.getElementById("bg_font");
@@ -135,16 +143,27 @@ const numBgGreen = document.getElementById("green_bg").value;
 const numBgBlue = document.getElementById("blue_bg").value;
 
 //background image option
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2");
-const img3 = document.getElementById("img3");
-const img4 = document.getElementById("img4");
-const img5 = document.getElementById("img5");
-const img6 = document.getElementById("img6");
-const img7 = document.getElementById("img7");
-const img8 = document.getElementById("img8");
-const img9 = document.getElementById("img9");
-const img10 = document.getElementById("img10");
+const bgAnis = [
+    'url("gifs/building.gif") center/ cover no-repeat', 
+    'url("gifs/Cotton candy.gif") center/ cover no-repeat', 
+    'url("gifs/download.gif") center/ cover no-repeat',
+    'url("gifs/Generosity.gif") center/ cover no-repeat', 
+    'url("gifs/heart.gif") center/ cover no-repeat', 
+    'url("gifs/Micro Cosmic.gif") center/ cover no-repeat',
+    'url("gifs/Moods.gif") center/ cover no-repeat'
+];
+
+
+const imgs = ['url("img/air.jpg")',
+              'url("img/board.jpg")',
+              'url("img/gal.jpg")',
+              'url("img/jungle.jpg")',
+              'url("img/rock.jpg")',
+              'url("img/sand.jpg")',
+              'url("img/water.jpg")',
+              'url("img/wood.jpg")',
+              'url("img/led.jpg")'
+];
 
 if(font){
     font.addEventListener('click', ()=>{
@@ -153,8 +172,12 @@ if(font){
         style_group.classList.remove('open');
         gFont.classList.add('open');
         bg_img.classList.remove('open');
-        gAni.classList.remove('open');
+        aniOpt.classList.remove('open');
         emo_gr.classList.remove('open');
+        gBord.classList.remove('open');
+        background_ani.classList.remove('open');
+        aniOpt.classList.remove('open');
+        gAni.classList.remove('open');
         bg_part.classList.remove('open');
         text.classList.add('open');
         sNav.classList.remove('open');
@@ -165,9 +188,12 @@ if(ani){
         font_bg.classList.remove('open');
         font_color.classList.remove('open');
         style_group.classList.remove('open');
-        gAni.classList.add('open');
+        aniOpt.classList.add('open');
+        gBord.classList.remove('open');
         bg_img.classList.remove('open');
+        background_ani.classList.remove('open');
         emo_gr.classList.remove('open');
+        gAni.classList.remove('open');
         gFont.classList.remove('open');
         bg_part.classList.remove('open');
         text.classList.add('open');
@@ -182,12 +208,28 @@ if(bord){
         bg_part.classList.add('open');
         gFont.classList.remove('open');
         gBord.classList.remove('open');
-        emo_gr.classList.remove('open');
-        bg_img.classList.remove('open');
         gAni.classList.remove('open');
+        aniOpt.classList.remove('open');
+        emo_gr.classList.remove('open');
+        background_ani.classList.remove('open');
+        bg_img.classList.remove('open');
+        aniOpt.classList.remove('open');
         text.classList.add('open');
         sNav.classList.remove('open');
     })
+}
+if(textAni){
+    textAni.addEventListener('click', ()=>{
+        gAni.classList.add('open');
+        aniOpt.classList.remove('open');
+    })
+}
+if(doneListAni){
+    doneListAni.addEventListener('click', ()=>{
+        aniOpt.classList.remove('open');
+        text.classList.remove('open');
+    })
+
 }
 if(fDone){
     fDone.addEventListener('click', ()=>{
@@ -199,6 +241,7 @@ if(fDone){
 if(aDone){
     aDone.addEventListener('click', ()=>{
         gAni.classList.remove('open');
+        aniOpt.classList.add('open');
         text.classList.remove('open');
     })
 }
@@ -353,6 +396,30 @@ if(style){
         }
     })
 }
+if(bgAni){
+    bgAni.addEventListener('click', ()=>{
+        background_ani.classList.add('open');
+        aniOpt.classList.remove('open');
+    })
+}
+
+for (let i = 1; i <= 7; i++) {
+    const bgAni = document.getElementById(`bgAni${i}`);
+    if (bgAni) {
+        bgAni.addEventListener('click', () => {
+            bgImg.style.background = bgAnis[i - 1];
+        });
+    }
+}
+
+if(done_bgAni){
+    done_bgAni.addEventListener('click', ()=>{
+        background_ani.classList.remove('open');
+        text.classList.remove('open');  
+
+    })
+}
+
 if(emo_btn){
     emo_btn.addEventListener('click', ()=>{
         font_color.classList.remove('open');
@@ -379,50 +446,20 @@ if(bg_style){
         style_group.classList.remove('open');
         gFont.classList.remove('open');
         text.classList.add('open');
-        if(img1){
-            img1.addEventListener('click', ()=>{
-                text.style.background = "url(img/air.jpg)";
-            })
-        }if(img2){
-            img2.addEventListener('click', ()=>{
-                text.style.background = "url(img/board.jpg)";
-            })
-        }if(img3){
-            img3.addEventListener('click', ()=>{
-                text.style.background = "url(img/gal.jpg)";
-            })
-        }if(img4){
-            img4.addEventListener('click', ()=>{
-                text.style.background = "url(img/jungle.jpg)";
-            })
-        }if(img5){
-            img5.addEventListener('click', ()=>{
-                text.style.background = "url(img/rock.jpg)";
-            })
-        }if(img6){
-            img6.addEventListener('click', ()=>{
-                text.style.background = "url(img/sand.jpg)";
-            })
-        }if(img7){
-            img7.addEventListener('click', ()=>{
-                text.style.background = "url(img/water.jpg)";
-            })
-        }if(img8){
-            img8.addEventListener('click', ()=>{
-                text.style.background = "url(img/wood.jpg)";
-            })
-        }if(img10){
-            img10.addEventListener('click', ()=>{
-                text.style.background = "url(img/led.jpg)";
-            })
-        }if(img9){
-            img9.addEventListener('click', ()=>{
-                text.style.background = "none";
-            })
-        }
+        
 
     })
 }
+for (let i = 0; i < 9; i++) {
+    const img = document.getElementById(`img${i + 1}`);
+    if (img) {
+        img.addEventListener('click', () => {
+            text.style.background = imgs[i];
+        });
+    }
+}
+
+
 if(fcDone){
     fcDone.addEventListener('click', ()=>{
         font_color.classList.remove('open');
