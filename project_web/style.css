@@ -12,7 +12,7 @@ body{
   
 }
 
-.bgImg{
+#bgImg{
     width: 100%;
     height: 100vh;
     background: url("img/bg.jpg") center/ cover no-repeat;
@@ -627,7 +627,7 @@ img{
     transform: translateX(50%);
     border: 2px solid gray;
     border-radius: 15px;
-    /* overflow: hidden; */
+    overflow: hidden;
     white-space: nowrap;
     z-index: 100;
     background-color: rgba(163, 159, 159, 0.5); 
@@ -732,7 +732,12 @@ img{
 #bg_part.open{
     right: 0;
 }
-#bg_part div:hover{
+#bg_part .b{
+    width: 100%;
+    text-align: center;
+    transition: 0.2s ease;
+}
+#bg_part .b:hover{
     background-color: rgba(33, 33, 33, 0.5); 
     color: #fff;
     font-size: 1.2rem;
@@ -776,6 +781,82 @@ img{
 #emoji_group span:hover{
     background-color: rgba(33, 33, 33, 0.5); 
     font-size: 2.2rem;
+}
+
+#ani_option{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    padding-top: 30px;
+    background-color: rgba(33, 33, 33, 0.5); 
+    padding-bottom: 70px;
+    transition: 0.5s ease;
+    animation: forwards;
+    border-radius: 0 0 0 10px;
+    position: absolute;
+    right: -500px;
+    top: 80px;   
+    gap: 10px;
+}
+#ani_option.open{
+    right: 0;
+}
+#ani_option .ani{
+    transition: 0.2s ease;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+#ani_option .ani:hover{
+    background-color: rgba(33, 33, 33, 0.5); 
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#background_ani{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 530px;
+    padding-top: 30px;
+    background-color: rgba(33, 33, 33, 0.5); 
+    padding-bottom: 70px;
+    transition: 0.5s ease;
+    animation: forwards;
+    border-radius: 0 0 0 10px;
+    position: absolute;
+    right: -500px;
+    top: 80px;
+}
+#background_ani.open{
+    right: 0;
+}
+#background_ani .aniGr{
+    width: 100%;
+}
+
+#background_ani a{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+#background_ani img{
+    transition: 0.2s ease;
+    width: 100px;
+    margin-bottom: 5px;
+
+}
+#background_ani a:hover{
+    background-color: rgba(33, 33, 33, 0.5); 
+    color: #fff;
+    font-size: 1.2rem;
 }
 
 
