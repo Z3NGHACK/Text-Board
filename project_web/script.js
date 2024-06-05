@@ -84,6 +84,9 @@ const sBord = document.getElementById("bord_icons");
 let input = document.getElementById("text_inp").value;
 let inp_done = document.getElementById("done_head");
 
+const inp_mini_done = document.getElementById("sdone_head");
+let inp_mini = document.getElementById("text_inps").value;
+
 
 //color slider element in font color
 let fRed = document.getElementById("fontRCode");
@@ -389,6 +392,19 @@ if(emo_done){
 if(ham){
     ham.addEventListener('click', ()=>{
         sNav.classList.add('open');
+        
+        font_bg.classList.remove('open');
+        font_color.classList.remove('open');
+        style_group.classList.remove('open');
+        gFont.classList.remove('open');
+        bg_img.classList.remove('open');
+        aniOpt.classList.remove('open');
+        emo_gr.classList.remove('open');
+        gBord.classList.remove('open');
+        background_ani.classList.remove('open');
+        aniOpt.classList.remove('open');
+        gAni.classList.remove('open');
+        bg_part.classList.remove('open');
     })
 }
 if(sDone){
@@ -451,6 +467,12 @@ let st = document.getElementById("st");
 if(inp_done){
     inp_done.addEventListener('click', ()=>{
         let input = document.getElementById("text_inp").value;
+        st.innerHTML = input;
+    })
+}
+if(inp_mini_done){
+    inp_mini_done.addEventListener('click', ()=>{
+        let input = document.getElementById("text_inps").value;
         st.innerHTML = input;
     })
 }
