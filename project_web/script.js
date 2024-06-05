@@ -51,20 +51,24 @@ const emo_done = document.getElementById("done_emoji");
 let text = document.getElementById("text_control");
 //text board 
 let t = document.getElementById("text");
-let emoMain  =document.getElementById("emo_main");
+let emoMain = document.getElementById("emo_main");
 
 //group emoji
-const emos = [];
-for (let i = 1; i <= 20; i++) {
-  const em = document.getElementById(`emo${i}`);
-  emos.push(em);
-}
 
 let emCode = ["&#128522","&#128512","&#128514","&#128517","&#128520",
                 "&#128519","&#128523","&#128525","&#12856","&#128527",
                 "&#128530","&#128531","&#128534","&#128536","&#128541",     
                 "&#128542","&#128543","&#128545","&#128548","&#128557",
             ]
+
+for(let i = 0; i <= 20; i++){
+    const emo = document.getElementById(`emo${i}`);
+    if(emo){
+        emo.addEventListener('click', ()=>{
+            emoMain.innerHTML = emCode[i - 1];
+        })
+    }
+}
 
 //navbar in small size page
 const sNav = document.getElementById("semi_navbar");
@@ -76,51 +80,10 @@ const sFont = document.getElementById("font_icons");
 const sAni = document.getElementById("ani_icons");
 const sBord = document.getElementById("bord_icons");
 
-//each element in animation type
-let ani1 = document.getElementById("ani1");
-let ani2 = document.getElementById("ani2");
-let ani3 = document.getElementById("ani3");
-let ani4 = document.getElementById("ani4");
-let ani5 = document.getElementById("ani5");
-let ani6 = document.getElementById("ani6");
-let ani7 = document.getElementById("ani7");
-
-//each element in border type
-let border1 = document.getElementById("border1");
-let border2 = document.getElementById("border2");
-let border3 = document.getElementById("border3");
-let border4 = document.getElementById("border4");
-let border5 = document.getElementById("border5");
-let border6 = document.getElementById("border6");
-let border7 = document.getElementById("border7");
-let border8 = document.getElementById("border8");
-
 //get input text and throw input value
 let input = document.getElementById("text_inp").value;
 let inp_done = document.getElementById("done_head");
 
-//font style type element
-let style1 = document.getElementById("style1");
-let style2 = document.getElementById("style2");
-let style3 = document.getElementById("style3");
-// let style4 = document.getElementById("style4");
-let style5 = document.getElementById("style5");
-let style6 = document.getElementById("style6");
-// let style7 = document.getElementById("style7");
-// let style8 = document.getElementById("style8");
-// let style9 = document.getElementById("style9");
-let style10 = document.getElementById("style10");
-let style11 = document.getElementById("style11");
-let style12 = document.getElementById("style12");
-// let style13 = document.getElementById("style13");
-let style14 = document.getElementById("style14");
-let style15 = document.getElementById("style15");
-// let style16 = document.getElementById("style16");
-// let style17 = document.getElementById("style17");
-let style18 = document.getElementById("style18");
-let style19 = document.getElementById("style19");
-let style20 = document.getElementById("style20");
-t.style.fontFamily = 'Jacquard 12';
 
 //color slider element in font color
 let fRed = document.getElementById("fontRCode");
@@ -151,18 +114,6 @@ const bgAnis = [
     'url("gifs/heart.gif") center/ cover no-repeat', 
     'url("gifs/Micro Cosmic.gif") center/ cover no-repeat',
     'url("gifs/Moods.gif") center/ cover no-repeat'
-];
-
-
-const imgs = ['url("img/air.jpg")',
-              'url("img/board.jpg")',
-              'url("img/gal.jpg")',
-              'url("img/jungle.jpg")',
-              'url("img/rock.jpg")',
-              'url("img/sand.jpg")',
-              'url("img/water.jpg")',
-              'url("img/wood.jpg")',
-              'url("img/led.jpg")'
 ];
 
 if(font){
@@ -291,6 +242,30 @@ if(bg_font){
         text.classList.add('open');
     })
 }
+
+
+let fontStyles = ["Danfo", "Permanent Marker", "Poppins", "Josefin Sans", "Poetsen One"
+                , "Oswald", "Concert One", "Teko", "Major Mono Display", "Jaro"
+                , "Dancing Script", "Anton", "Seymour One", "Pacifico", "Shadows Into Light"
+                , "Abril Fatface", "Smokum", "Rubik Mono One", "Indie FLower", "Titan One"
+                ];
+
+for(let i = 0; i <= 20; i++){
+    const style = document.getElementById(`style${i}`);
+    if(style){
+        style.addEventListener('click', ()=>{
+            font_color.classList.remove('open');
+            font_bg.classList.remove('open');
+            bg_img.classList.remove('open');
+            style_group.classList.add('open');
+            gFont.classList.remove('open');
+            text.classList.add('open');
+
+            st.style.fontFamily = fontStyles[i - 1];
+        })
+    }
+}
+
 if(style){
     style.addEventListener('click', ()=>{
         font_color.classList.remove('open');
@@ -300,102 +275,10 @@ if(style){
         gFont.classList.remove('open');
         text.classList.add('open');
 
-        if(style1){
-            style1.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Danfo';
-            })
-        }if(style2){
-            style2.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Permanent Marker';
-            })
-        }if(style3){
-            style3.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Poppins';
-            })
-        }
-        // if(style4){
-        //     style4.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Jacquard 12';
-        //         t.style.color = 'red';
-        //     })
-        // }
-        if(style5){
-            style5.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Poetsen One';
-            })
-        }if(style6){
-            style6.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Oswald';
-            })
-        }
-        // if(style7){
-        //     style7.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Noto Sans Khmer';
-        //     })
-        // }if(style8){
-        //     style8.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Noto Sans JP';
-        //     })
-        // }if(style9){
-        //     style9.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Major Mono Dislay';
-        //         t.style.color = 'blue';
-        //     })
-        // }
-        if(style10){
-            style10.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Jaro';
-            })
-        }if(style11){
-            style11.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Dancing Script';
-            })
-        }if(style12){
-            style12.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Anton';
-            })
-        }
-        // if(style13){
-        //     style13.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Exo 2';
-        //         t.style.color = 'red';
-        //     })
-        // }
-        if(style14){
-            style14.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Pacifico';
-            })
-        }if(style15){
-            style15.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Shadows Into Light';
-            })
-        }
-        // if(style16){
-        //     style16.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Abril Fatface';
-        //         t.style.color = 'red';
-        //     })
-        // }if(style17){
-        //     style17.addEventListener('click', ()=>{
-        //         t.style.fontFamily = 'Micro 5 Charted';
-        //         t.style.color = 'red';
-        //     })
-        // }
-        if(style18){
-            style18.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Rubik Mono One';
-            })
-        }if(style19){
-            style19.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Indie Flower';
-            })
-        }if(style20){
-            style20.addEventListener('click', ()=>{
-                t.style.fontFamily = 'Titan One';
-            })
-        }
     })
 }
+
+
 if(bgAni){
     bgAni.addEventListener('click', ()=>{
         background_ani.classList.add('open');
@@ -432,11 +315,11 @@ if(emo_btn){
     })
 }
 
-emos.forEach((em, index) => {
-    em.addEventListener('click', () => {
-      emoMain.innerHTML = emCode[index];
-    });
-  });
+// emos.forEach((em, index) => {
+//     em.addEventListener('click', () => {
+//       emoMain.innerHTML = emCode[index];
+//     });
+//   });
 
 if(bg_style){
     bg_style.addEventListener('click', ()=>{
@@ -450,7 +333,20 @@ if(bg_style){
 
     })
 }
-for (let i = 0; i < 9; i++) {
+
+const imgs = ['url("img/air.jpg") center/ cover no-repeat',
+              'url("img/board.jpg") center/ cover no-repeat',
+              'url("img/gal.jpg") center/ cover no-repeat',
+              'url("img/jungle.jpg") center/ cover no-repeat',
+              'url("img/rock.jpg") center/ cover no-repeat',
+              'url("img/sand.jpg") center/ cover no-repeat',
+              'url("img/water.jpg") center/ cover no-repeat',
+              'url("img/wood.jpg") center/ cover no-repeat',
+              'url("img/led.jpg") center/ cover no-repeat',
+              'none'
+];
+
+for (let i = 0; i < 10; i++) {
     const img = document.getElementById(`img${i + 1}`);
     if (img) {
         img.addEventListener('click', () => {
@@ -522,100 +418,40 @@ if(sBord){
     })
 }
 
-if(ani1){
-    ani1.addEventListener('click', ()=>{
-        t.style.animation = 'slideAnimationjs 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-if(ani2){
-    ani2.addEventListener('click', ()=>{
-        t.style.animation = 'fadeAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}if(ani3){
-    ani3.addEventListener('click', ()=>{
-        t.style.animation = 'scaleAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}if(ani4){
-    ani4.addEventListener('click', ()=>{
-        t.style.animation = 'colorChangeAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}if(ani5){
-    ani5.addEventListener('click', ()=>{
-        t.style.animation = 'bounceAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-if(ani6){
-    ani6.addEventListener('click', ()=>{
-        t.style.animation = 'waverAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
-}
-if(ani7){
-    ani7.addEventListener('click', ()=>{
-        t.style.animation = 'pulseAnimation 2s infinite'; // Setting animation, duration, and iteration count in one line
-    })
+const anis = ["slideAnimationjs 4s infinite", "fadeAnimation 2s infinite", "scaleAnimation 2s infinite", 
+            "lights 5s 750ms linear infinite", "bounceAnimation 2s infinite", "waverAnimation 2s infinite", 
+            "pulseAnimation 2s infinite", "glow 3s infinite", "slideBack 4s infinite", "shine 3s infinite",
+            "wave 4s infinite"
+            ]
+
+for(let i = 0; i <= 11 ; i++){
+    const ani = document.getElementById(`ani${i}`);
+    if(ani){
+        ani.addEventListener('click', ()=>{
+            t.style.animation = anis[i - 1];
+        })
+    }
 }
 
-if(border1){
-    border1.addEventListener('click', ()=>{
-        text.style.border = ' 5px solid gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border2){
-    border2.addEventListener('click', ()=>{
-        text.style.border = ' 5px dashed gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border3){
-    border3.addEventListener('click', ()=>{
-        text.style.border = ' 5px dotted gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border4){
-    border4.addEventListener('click', ()=>{
-        text.style.border = ' 5px double gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border5){
-    border5.addEventListener('click', ()=>{
-        text.style.border = ' 5px inset gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border6){
-    border6.addEventListener('click', ()=>{
-        text.style.border = ' 5x outset gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border7){
-    border7.addEventListener('click', ()=>{
-        text.style.border = ' 5px groove gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
-}
-if(border8){
-    border8.addEventListener('click', ()=>{
-        text.style.border = ' 5px ridge gray';
-        t.style.padding = '10px 15px';
-        t.style.borderRadius = '10px';
-    })
+const borders = ["5px solid gray", "5px dashed gray", "5px dotted gray",
+                "5px double gray", "5px inset gray", "5x outset gray",
+                "5px groove gray", "5px ridge gray"
+];
+
+for(let i = 0; i <= 8; i++){
+    const border = document.getElementById(`border${i}`);
+    if(border){
+        border.addEventListener('click', ()=>{
+            text.style.border = borders[i - 1];
+        })
+    }
 }
 
+let st = document.getElementById("st");
 if(inp_done){
     inp_done.addEventListener('click', ()=>{
         let input = document.getElementById("text_inp").value;
-        t.innerHTML = input;
+        st.innerHTML = input;
     })
 }
 
@@ -660,3 +496,68 @@ function updateColorFont() {
 fRed.addEventListener('input', updateColorFont);
 fGreen.addEventListener('input', updateColorFont);
 fBlue.addEventListener('input', updateColorFont);
+
+const exit = document.getElementById("exit");
+const show = document.getElementById("show");
+const navbar = document.getElementById("navbar");
+const catchMe = document.getElementById("catchMe");
+
+if(show){
+    show.addEventListener('click', ()=>{
+        exit.classList.remove('open');
+        show.classList.remove('open');
+        text.classList.remove('subChange');
+        navbar.classList.remove('open');
+        catchMe.classList.remove('open');
+        catchMe.style.left = '-100%';
+        text.style.background = 'rgba(163, 159, 159, 0.5)';
+        text.style.border = '2px solid gray';
+    })
+}
+
+if(exit){
+    exit.addEventListener('click', ()=>{
+        exit.classList.add('open');
+        show.classList.add('open');
+        text.classList.add('subChange');
+        navbar.classList.add('open');
+        catchMe.classList.add('open');
+        catchMe.style.left = '-10px';
+        catchMe.style.bottom = '20px';
+        text.style.background = 'none';
+        text.style.border = 'none';
+
+        
+        font_bg.classList.remove('open');
+        font_color.classList.remove('open');
+        style_group.classList.remove('open');
+        gFont.classList.remove('open');
+        bg_img.classList.remove('open');
+        aniOpt.classList.remove('open');
+        emo_gr.classList.remove('open');
+        gBord.classList.remove('open');
+        background_ani.classList.remove('open');
+        aniOpt.classList.remove('open');
+        gAni.classList.remove('open');
+        bg_part.classList.remove('open');
+        text.classList.remove('open');
+        sNav.classList.remove('open');
+    })
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const catchMe = document.getElementById('catchMe');
+
+    catchMe.addEventListener('mouseover', function() {
+        const body = document.body;
+        const bodyRect = body.getBoundingClientRect();
+        
+        const maxX = bodyRect.width - catchMe.offsetWidth;
+        const maxY = bodyRect.height - catchMe.offsetHeight;
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        catchMe.style.left = `${randomX}px`;
+        catchMe.style.top = `${randomY}px`;
+    });
+});
