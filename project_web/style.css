@@ -53,9 +53,73 @@ body{
 }
 .done_btn:hover{
     background-color: #fff;
-    color: aquamarine;
+    color: rgba(45, 45, 45, 0.5);
     border-color: #fff;
     font-weight: 600;
+}
+.sub_btn{
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: rgba(45, 45, 45, 0.5);
+    text-align: center;
+    font-weight: 500;
+    margin-left: 50px;
+    border-radius: 10px;
+    width: 40px;
+    padding: 10px 15px;
+    transition: 0.2s ease;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    bottom: 20px;
+    animation: forwards;
+}
+.sub_btn:hover{
+    background-color: rgba(45, 45, 45, 0.5);
+    color: #fff; 
+    border-color: #fff;
+    font-weight: 600;
+}
+#show{
+    border: none;
+    color: #fff;
+    width: 20px;
+    top: 10px;
+    height: 5px;
+    left: -100px;
+    font-size: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background-color: rgba(45, 45, 45, 0.5);
+}
+#show.open{
+    left: -2%;
+}
+#exit.open{
+    right: -100px;
+}
+
+#catchMe{
+    border: 2px solid #fff;
+    height: 23px;
+    color: rgba(33, 33, 33, 0.5);
+    background-color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin-left: 50px;
+    border-radius: 10px;
+    width: 40px;
+    padding: 10px 15px;
+    transition: 0.5s ease;
+    position: absolute;
+    cursor: pointer;
+    left: -1000px;
+    transition: 0.5s ease;
+}
+#catchMe.open{
+    left: -15px;
+    z-index: 1000;
 }
 
 .first_page{
@@ -94,13 +158,20 @@ body{
     font-weight: 500;
     background-color: rgba(45, 45, 45, 0.5); 
     font-size: 1.5rem;
+    position: relative;
+    top: 0;
+    transition: 0.4s ease;
 }
+#navbar.open{
+    top: -100px;
+}
+
 .inp{
     display: flex;
 }
 #text_inp{
     border:none;
-    border-right: 1px solid aquamarine;
+    border-right: 1px solid rgba(45, 45, 45, 0.5);
     padding-left: 10px;
     border-radius: 10px 0 0 10px;
 }
@@ -214,7 +285,6 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 30px 0;
     animation: forwards;
     transition: 0.5s ease;
     position: absolute;
@@ -225,6 +295,12 @@ body{
 }
 #animation.open{
     right: 0;
+}
+#animation .ag{
+    width: 100%;
+    height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 #animation .ani{
     width: 100%;
@@ -244,12 +320,21 @@ body{
     color: #fff;
     font-size: 1.2rem;
 }
-@keyframes slideAnimation {
+@keyframes slideBack {
     0%{
-        transform: translateX(100%);
+        transform: translateX(-150%);
     }
     100%{
-        transform: translateX(-100%);
+        transform: translateX(150%);
+    }
+    
+}
+@keyframes slideAnimation {
+    0%{
+        transform: translateX(150%);
+    }
+    100%{
+        transform: translateX(-150%);
     }
 }
 @keyframes slideAnimationjs {
@@ -361,9 +446,155 @@ body{
         transform: scale(1);
     }
 }
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+}
+@keyframes glow{
+    0%{
+        
+        text-shadow: none;
+    }
+    30%{ 
+        color: #fff;
+        text-shadow: 0 0 10px #fff,
+                    0 0 20px #fff, 
+                    0 0 40px #fff;
+    }
+    60%{
+        
+        text-shadow: none;
+    }
+    90%{ 
+        color: #fff;
+        text-shadow: 0 0 10px #fff,
+                    0 0 20px #fff, 
+                    0 0 40px #fff;
+    }
+    100%{
+        
+        text-shadow: none;
+    }
+}
+
+@keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset:  20%;
+      fill:hsl(189, 68%, 75%)
+  
+    }
+    
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffstet: -20%;
+      fill: hsla(189, 68%, 75%,0%)
+    }
+    
+}
+@keyframes shine {
+    0% {
+      background-position-x: -300%;
+      
+    }
+    100% {
+      background-position-x: 300%;  
+      font-weight: 700;
+      text-align: center;
+      font-size: 40px;
+      background: linear-gradient(90deg, #000, #fff, #000);
+      letter-spacing: 5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      animation: shine 5s linear infinite;
+      position: relative;
+    }
+}
+@keyframes wave {
+    0% {
+        transform: translateX(-150%) translateY(0);
+    }
+    10% {
+        transform: translateX(-125%) translateY(-30px);
+    }
+    20% {
+        transform: translateX(-100%) translateY(0);
+    }
+    30% {
+        transform: translateX(-75%) translateY(-30px);
+    }
+    40% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-25%) translateY(-30px);
+    }
+    60% {
+        transform: translateX(0%) translateY(0);
+    }
+    70% {
+        transform: translateX(25%) translateY(-30px);
+    }
+    80% {
+        transform: translateX(50%) translateY(0);
+    }
+    90% {
+        transform: translateX(75%) translateY(-30px);
+    }
+    100% {
+        transform: translateX(120%) translateY(0);
+    }
+}
+
 .a1 {
     animation-name: slideAnimation;
-    animation-duration: 4s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
 }
 .a2 {
@@ -377,9 +608,7 @@ body{
     animation-iteration-count: infinite;
 }
 .a4 {
-    animation-name: colorChangeAnimation;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    animation: lights 5s 750ms linear infinite;
 }
 .a5 {
     animation-name: bounceAnimation;
@@ -395,6 +624,18 @@ body{
     animation-name: pulseAnimation;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+}
+.a8{
+    animation: glow 3s infinite;
+}
+.a9{
+    animation: slideBack 6s infinite;
+}
+.a10{
+    animation: shine 3s infinite;
+}
+.a11{
+    animation: wave 4s infinite;
 }
 
 
@@ -636,6 +877,12 @@ img{
     right: 70%;
     top: 20px;
 }
+#text_control.subChange{
+    border: none;
+    background-color: transparent;
+    font-size: 7.5rem;
+    overflow:visible;
+}
 
 
 #navbar .ham{
@@ -858,6 +1105,7 @@ img{
     color: #fff;
     font-size: 1.2rem;
 }
+
 
 
 @keyframes fadeIn {
